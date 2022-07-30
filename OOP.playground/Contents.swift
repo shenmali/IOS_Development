@@ -299,3 +299,13 @@ H.sesCikar()
 M.sesCikar()
 kedi.sesCikar()
 kopek.sesCikar()
+
+//UPCASTING
+
+var ev = Saray(kuleSayisi: 3, pencereSayisi: 10) as Ev
+
+//DOWNCASTING
+
+var saray = Ev(pencereSayisi: 4) as? Saray
+
+//TYPE CHECK
