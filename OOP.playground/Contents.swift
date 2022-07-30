@@ -309,3 +309,59 @@ var ev = Saray(kuleSayisi: 3, pencereSayisi: 10) as Ev
 var saray = Ev(pencereSayisi: 4) as? Saray
 
 //TYPE CHECK
+
+if ev is Ev {
+    print("nesne ev sinifindan turetilmistir")
+}else{
+    print("nesne ev sinifindan turetilMEmistir")
+}
+
+
+//PROTOCOLS (interface)
+
+protocol MyProtocol{
+    var degisken:Int{get set}
+    func metod1()
+    
+    func metod2()->String
+}
+
+class ClassA : MyProtocol { //bir sinif abirden fazla protocol(interface) eklenebilir
+    var degisken: Int = 10
+    
+    func metod1() {
+        print("metod1 calisti")
+    }
+    
+    func metod2() -> String {
+        print("metod2 calisti")
+        return "metod2 calisti"
+    }
+}
+
+var a = ClassA()
+
+print(a.degisken)
+a.metod1()
+print(a.metod2())
+
+//EXTENSION
+
+
+extension Int {
+    func carp(sayi:Int) -> Int{
+        return self * sayi
+    }
+}
+
+var x = 3.carp(sayi: 5)
+print(x)
+
+//CLOSURE
+
+var ifade = {
+    print("closure calisti")
+}
+
+ifade()
+
